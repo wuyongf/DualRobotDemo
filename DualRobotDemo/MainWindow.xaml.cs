@@ -49,7 +49,7 @@ namespace DualRobotDemo
 
             // (5) Set Station Antenna TCP (Cr7)
             // float[] station_cal_pin_tcp_cr7 = { 832.244f, -102.672f, 272.135f, 0.841f, 0.826f, -92.135f }; // lab version
-            float[] dutCalPinTCP = { 832.244f, -102.672f, 272.135f, 0.841f, 0.826f, -92.135f }; // lab version
+            float[] dutCalPinTCP = { 832.244f, -102.672f, 127.135f, 0.841f, 0.826f, -92.135f }; // manual cal version
 
             float dutCalPinLength = 40.05f; // x + 0.8f
             var dutFixtureTCP = core.GetStationCenterZeroTCP(dutCalPinTCP, dutCalPinLength);
@@ -63,7 +63,8 @@ namespace DualRobotDemo
             core.SetStationAntennaTCP_Cr7(station_antenna_tcp_cr7);
 
             // (7) Scene
-            double[] param = { 0, 200, 2, 200, 2, 0, 0 };
+            // double[] param = { 0, 200, 2, 200, 2, 300, 2 };
+            double[] param = { 45, 200, 3, 200, 3, 255, 2 };
             core.SceneParamInit(SceneName.Scene4, param);
 
             // (*) stage1
